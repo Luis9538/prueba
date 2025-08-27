@@ -2,16 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Corazón Expansivo</title>
+  <title>Corazón Saltarín</title>
   <style>
     body {
-      background-color: #fffafc;
+      background-color: #fffaf0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      font-family: 'Courier New', monospace;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     .heart {
@@ -20,7 +20,7 @@
       height: 90px;
       background: red;
       transform: rotate(-45deg);
-      animation: expandir 2s infinite ease-in-out;
+      animation: saltar 1.5s infinite ease-in-out;
     }
 
     .heart::before,
@@ -43,44 +43,34 @@
       top: 0;
     }
 
-    @keyframes expandir {
-      0% {
-        transform: rotate(-45deg) scale(1);
-        opacity: 1;
+    @keyframes saltar {
+      0%, 100% {
+        transform: rotate(-45deg) translateY(0);
       }
       50% {
-        transform: rotate(-45deg) scale(1.5);
-        opacity: 0.6;
-      }
-      100% {
-        transform: rotate(-45deg) scale(1);
-        opacity: 1;
+        transform: rotate(-45deg) translateY(-20px);
       }
     }
 
     .frase {
-      margin-top: 30px;
-      font-size: 1.4em;
-      color: #b22222;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #b22222;
-      width: 0;
-      animation: escribir 5s steps(40, end) forwards;
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #d6336c;
+      text-align: center;
+      opacity: 0;
+      animation: aparecer 3s forwards;
+      animation-delay: 1s;
     }
 
-    @keyframes escribir {
-      from {
-        width: 0;
-      }
+    @keyframes aparecer {
       to {
-        width: 100%;
+        opacity: 1;
       }
     }
   </style>
 </head>
 <body>
   <div class="heart"></div>
-  <div class="frase">Tu amor se expande en cada latido 💖</div>
+  <div class="frase">¡El amor salta de alegría contigo! 💕</div>
 </body>
 </html>
